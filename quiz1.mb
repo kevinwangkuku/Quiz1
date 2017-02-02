@@ -1,0 +1,107 @@
+1. 請說明 Fixnum (整數) 和 Float (浮點數) 之間的差異
+
+    Fixnum是表示0,1,2等整數,也有正負值
+    Float是表示0.1,0.5等有小數的數值,也有正負值
+
+
+
+2. 今天有兩個字串：
+  
+  str1 = "Hallo Welt!" 
+  str2 = " NTU Rails 261!"
+  請說明以下兩個印出字串的方式的不同處：
+  
+  puts str1 + str2
+  puts "#{str1}#{str2}"
+
+  使用「＋」將兩個字串連起來會比較消耗記憶體資源．
+  如果使用＃{}這個方式會將字串轉換成變數的方式，直接透過編譯器直接轉換成字串．
+
+3. 請解釋 array 和 hash 的不同處
+
+   array:陣列內容可以存放、整數、字串、陣列..等等的資料型態．
+   hash: 只能透過key來存取整數、字串． 
+
+
+4. 請用一行程式碼從 [1, "a string", 3.14, [1,2,3,4]] 這個陣列找出所有非字串的值
+     
+     arr.reject { |x| x.is_a?(string) }
+
+5. 請用一行程式碼把一個內容為整數 1 到 100 的陣列裡所有的值加上 2
+
+    arr.map! { |x| x += 2 }
+
+6. 請寫出以下兩行程式碼迴傳的值，並解釋他們呼叫的方法差別為何：
+  
+  [1, 2, 3, 3].uniq
+  [1, 2, 3, 3].uniq!
+
+  uniq是將陣列裡重複的項目移除，回傳陣列資料，uniq過程並不會改變本來陣列的內容。
+  uniq!唯一不太一樣的地方是直接修改原本的陣列，並不會額外存取在新的陣列．
+
+
+7. 請列出兩種產出亂數的方法
+
+    arr = [1, 2 , 3]
+    puts arr.sample
+
+    var = Random.rand(1..3) 
+    
+
+8. 以下這段程式碼：
+  
+  ((1 > 3)&&(true == true))||(!!!false)
+  
+  會執行出什麼結果？ 請試試不用 irb 算出結果
+   false && true || true 
+   =>true
+
+
+
+9. 請問 binding.pry 是什麼？ 要如何使用它？
+    
+    reguire 'pry'
+    a = "Hello World"
+    binding.pry
+    puts a
+10. 下面的一段程式碼，請嘗試用其他方法把 if...else...end 簡化成一行
+
+  
+  var = 5
+
+  if var >= 5
+  	return "var is greater than or equal to 5"
+  else
+  	return "var is less than 5"
+  end
+  
+  return var >= 5 "var is greater than or equal to 5" : "var is less than 5"
+
+
+
+11. 請列出兩種不同的 hash 寫法
+
+person = { 
+           :name => "Bob", 
+           :age => 30,
+         }
+
+
+person = { 
+           name: "Bob",
+           age: 30,
+       
+         }
+
+
+
+
+
+
+
+
+
+
+--------------------------------
+
+
